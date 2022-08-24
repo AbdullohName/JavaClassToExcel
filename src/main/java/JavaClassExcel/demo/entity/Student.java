@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,4 +24,15 @@ public class Student {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @Column(name = "java_class_id")
+    private Integer javaClassId;
+
+    @ManyToMany
+    @JoinTable(
+            name = "ball_like",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "ball_id")
+    )
+    private List<Ball> ballList;
 }

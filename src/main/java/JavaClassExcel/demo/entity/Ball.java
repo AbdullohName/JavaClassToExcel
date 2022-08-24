@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,11 +18,11 @@ public class Ball {
     @GeneratedValue(generator = "id",strategy = GenerationType.AUTO)
     private Integer id;
 
+    private Integer ball;
+
     @Column(name = "task_id")
     private Integer taskId;
 
-    @Column(name = "student_id")
-    private Integer studentId;
-
-    private Integer ball;
+    @ManyToMany(mappedBy = "ballList")
+    private List<Student> studentList;
 }

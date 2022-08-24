@@ -20,6 +20,10 @@ public class JavaClass {
     private Integer id;
     @Column(name = "group_name")
     private String groupName;
-    @ManyToMany
+
+    @OneToMany(mappedBy = "javaClassId")
     private List<Student> studentList;
+
+    @OneToMany(mappedBy = "javaClassId")
+    private List<Task> taskList;
 }

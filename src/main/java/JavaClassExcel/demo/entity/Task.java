@@ -21,6 +21,9 @@ public class Task {
     private String columnName;
 
     private String comment;
-    @ManyToMany
-    private List<JavaClass> javaClassList;
+    @Column(name = "java_class_id")
+    private Integer javaClassId;
+
+    @OneToMany(mappedBy = "taskId")
+    private List<Ball> ballList;
 }
