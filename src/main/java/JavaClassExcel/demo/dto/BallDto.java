@@ -15,4 +15,5 @@ public class BallDto {
     private Integer taskId;
     private Integer studentId;
     private Integer ball;
+    private String comment;
 }

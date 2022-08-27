@@ -30,9 +30,9 @@ public class Student {
 
     @ManyToMany
     @JoinTable(
-            name = "ball_like",
+            name = "ball",
             joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "ball_id")
+            inverseJoinColumns = @JoinColumn(name = "task_id")
     )
     private List<Ball> ballList;
 }

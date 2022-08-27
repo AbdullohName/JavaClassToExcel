@@ -20,10 +20,12 @@ public class Task {
     @Column(name = "column_nane")
     private String columnName;
 
-    private String comment;
     @Column(name = "java_class_id")
     private Integer javaClassId;
 
-    @OneToMany(mappedBy = "taskId")
-    private List<Ball> ballList;
+    @ManyToMany(mappedBy = "ballList")
+    private List<Student> studentList;
+
+//    @OneToMany(mappedBy = "taskId")
+//    private List<Ball> ballList;
 }

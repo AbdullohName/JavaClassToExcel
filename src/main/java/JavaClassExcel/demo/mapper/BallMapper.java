@@ -7,6 +7,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface BallMapper {
-    BallDto toEntity(Ball ball);
-    Ball toDto(BallDto ballDto);
+    Ball toEntity(BallDto ballDto);
+    BallDto toDto(Ball ball);
 }
